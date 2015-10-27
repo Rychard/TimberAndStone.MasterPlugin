@@ -32,6 +32,12 @@ namespace Plugin.Rychard.MasterPlugin
 
         public HotPluginLoader(String pluginsPath, Action<String> logWriter)
         {
+            if (!Directory.Exists(pluginsPath))
+            {
+                logWriter("Plugins directory does not exist!");
+                return;
+            }
+
             _pluginsPath = pluginsPath;
             _logWriter = logWriter;
             _fileSystemWatcher = new BasicFileSystemWatcher(_pluginsPath);
@@ -89,6 +95,12 @@ namespace Plugin.Rychard.MasterPlugin
 
         private void Invoke(Action<HotPlugin> action)
         {
+            // If initialization has not yet been performed, do nothing.
+            if (_plugins == null)
+            {
+                return;
+            }
+
             foreach (var path in _plugins)
             {
                 Invoke(path.Value, action);
