@@ -15,8 +15,9 @@ Due to constraints regarding the way the .NET framework loads assemblies, they c
 
 ## Building From Source
 
-- Open the `Plugin.sln` file in Visual Studio 2015
-- Build the project:
+1. Open the `Assemblies` directory and follow the instructions in the `PUT_ASSEMBLIES_HERE.txt` file.
+2. Open the `Plugin.sln` file in Visual Studio 2015
+3. Build the project:
   - Keyboard Shortcut: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
   - Using the Menu: <kbd>Build</kbd> > <kbd>Build Solution</kbd>
   
